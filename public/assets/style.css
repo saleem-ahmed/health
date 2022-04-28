@@ -1,0 +1,812 @@
+@import url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1Mu51xHIzIFKw.woff2);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navbar */
+.header {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(180deg, #000000 -71.26%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    position: fixed;
+}
+
+/* hamburger style */
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    /* color: white; */
+}
+
+/*  */
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+.nav-logo img {
+    width: 30%;
+}
+.nav-item button {
+    background: #0266db;
+    border-radius: 6px;
+    padding: 14px 50px;
+    color: #ffffff;
+    border: none;
+}
+.nav-item button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* search */
+.box {
+    transform: translateZ(20px);
+}
+.input {
+    padding: 10px;
+    width: 50px;
+    height: 2.3rem;
+    background: none;
+    border: none;
+
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+    font-size: 12px;
+    color: white;
+    outline: none;
+    transition: 0.5s;
+}
+.box:hover input {
+    width: 150px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ffffff;
+    transition: 0.2s;
+}
+.box:hover i {
+    opacity: 0;
+    z-index: -1;
+}
+
+/* pop up */
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    /* border: 3px solid #f1f1f1; */
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+    /* border-radius:  16px 0 16px 0; */
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 16px;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.form-container h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #66a5ef;
+}
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #0266db;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    border-radius: 16px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+/* pop up */
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: lightgray;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color: white !important;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        padding: 8px 30px;
+    }
+}
+/* home page  */
+.header-back {
+    background-image: url("../assets/images/header-image.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-position: center; */
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.header-back .header-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 130px;
+}
+.header-back .header-content h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    color: #ffffff;
+}
+.header-back .header-content p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+}
+.header-back .header-content button {
+    background: #0266db;
+    border-radius: 6px;
+    color: #ffffff;
+    border: #0266db;
+    padding: 14px 20px;
+    width: 39%;
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+.header-back .header-content button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+@media screen and (max-width: 901px) {
+    .header-back {
+        height: 89vh;
+    }
+    .header-back .header-content {
+        width: 60%;
+        margin-left: 60px;
+    }
+    .header-back .header-content h2 {
+        font-size: 35px;
+    }
+    .header-back .header-content p {
+        font-size: 14px;
+    }
+    .header-back .header-content button {
+        padding: 10px 10px;
+        width: 40%;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .header-back {
+        display: flex;
+        justify-content: center;
+        height: 59vh;
+    }
+    .header-back .header-content {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-back .header-content h2 {
+        font-size: 20px;
+    }
+    .header-back .header-content p {
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media screen and (max-width: 501px) {
+    .header-back {
+        height: 52vh;
+    }
+    .header-back .header-content {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .header-back .header-content h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    .header-back .header-content p {
+        margin-top: 5px;
+    }
+    .header-back .header-content button {
+        padding: 10px 10px;
+        width: 45%;
+        font-weight: 500;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .header-back {
+        height: 37vh;
+        align-items: end;
+    }
+
+    .header-back .header-content h2 {
+        font-size: 16px;
+    }
+
+    .header-back .header-content button {
+        padding: 10px 10px;
+        width: 45%;
+        font-weight: 500;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 321px) {
+    .header-back {
+        height: 31vh;
+    }
+    .header-back .header-content {
+        margin-bottom: 10px;
+    }
+    .header-back .header-content p {
+        font-size: 11px;
+    }
+    .header-back .header-content button {
+        padding: 10px 10px;
+        width: 60%;
+        font-weight: 500;
+        font-size: 1opx;
+        margin-top: 5px;
+    }
+}
+/* home about page  */
+.home-about {
+    width: 80%;
+    margin: 45px auto;
+    display: flex;
+}
+.home-about .about-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-about .about-img img {
+    width: 80%;
+}
+.home-about .about-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-about .about-content h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    color: #66a5ef;
+}
+.home-about .about-content h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    color: #015b78;
+}
+.home-about .about-content p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #272727;
+    margin-top: 20px;
+}
+.home-about .about-content button {
+    background: #0266db;
+    border-radius: 6px;
+    color: #ffffff;
+    border: #0266db;
+    padding: 14px 10px;
+    width: 39%;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+.home-about .about-content button:hover {
+    background-color: #ffffff;
+    color: #272727;
+}
+@media screen and (max-width: 1025px) {
+    .home-about .about-content h3 {
+        font-size: 25px;
+    }
+    .home-about .about-content h2 {
+        font-size: 31px;
+    }
+    .home-about .about-content p {
+        font-size: 12px;
+    }
+    .home-about .about-content button {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .home-about {
+        display: flex;
+        flex-direction: column;
+    }
+    .home-about .about-img {
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .home-about .about-content h2 {
+        font-size: 28px;
+    }
+}
+
+/* services */
+.services {
+    width: 80%;
+    margin: 0 auto;
+}
+.services .title {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: #8cbbf3;
+}
+.services .cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 56px;
+}
+.services .cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.services .cards .card:hover {
+    box-shadow: 0px 10px 13px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 10px 13px 2px rgba(0, 0, 0, 0.5);
+}
+.services .cards .card img {
+    width: 25%;
+}
+.services .cards .card span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #282828;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 769px) {
+    .services .title h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .services .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: unset;
+    }
+}
+@media screen and (max-width: 376) {
+    .services .title h2 {
+        font-size: 20px;
+    }
+}
+
+/* team */
+.team-about {
+    width: 80%;
+    margin: 45px auto;
+    display: flex;
+}
+.team-about .team-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-about .team-images .img-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.team-about img {
+    margin: 10px 0;
+}
+.team-about .team-images .img-column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 50px;
+    /* align-items:flex-end; */
+}
+.team-about .team-images img {
+    width: 80%;
+}
+.team-about .team-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.team-about .team-content h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    color: #66a5ef;
+}
+.team-about .team-content h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    color: #015b78;
+}
+.team-about .team-content p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #272727;
+    margin-top: 20px;
+}
+.team-about .team-content button {
+    background: #0266db;
+    border-radius: 6px;
+    color: #ffffff;
+    border: #0266db;
+    padding: 14px 10px;
+    width: 39%;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+.team-about .team-content button:hover {
+    background-color: #ffffff;
+    color: #272727;
+}
+@media screen and (max-width: 1025px) {
+    .team-about .team-content h3 {
+        font-size: 25px;
+    }
+    .team-about .team-content h2 {
+        font-size: 31px;
+    }
+    .team-about .team-content p {
+        font-size: 12px;
+    }
+    .team-about .team-content button {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .team-about {
+        display: flex;
+        flex-direction: column;
+    }
+    .team-about .team-images {
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .team-about .team-content h2 {
+        font-size: 28px;
+    }
+}
+
+/*  feedback */
+
+.feedback {
+    background: rgba(187, 210, 251, 0.53);
+}
+/* Parent wrapper to carousel. Width can be changed as needed. */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+}
+
+/* Apply 'border-box' to 'box-sizing' so border and padding is included in the width and height. */
+.carousel-wrapper * {
+    box-sizing: border-box;
+}
+
+/* We'll be using the 'transform' property to move the carousel's items, so setting the 'transform-style' to 'preserve-3d' will make sure our nested elements are rendered properly in the 3D space. */
+.carousel {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* By default we're hiding items (except the initial one) until the JS initiates. Elements are absolutely positioned with a width of 100% (as we're styling for mobile first), letting the content's height dictate the height of the carousel. Our magic property here for all our animation needs is 'transition', taking the properties we wish to animate 'transform' and 'opacity', along with the length of time in seconds. */
+.carousel__photo {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    padding: 1rem 4rem;
+    z-index: 100;
+    transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+    display: flex;
+    justify-content: space-between;
+}
+.carousel__photo .card {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 40px;
+    width: 24%;
+}
+.carousel__photo .card p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #272727;
+    margin-top: 60px;
+}
+.carousel__photo .card .profile{
+    margin-top: 60px;
+    display: flex;
+}
+.carousel__photo .card img {
+    width: 15%;
+    
+}
+.carousel__photo .card .profile img {
+    width: 25%;
+    margin-right: 15px;
+    
+}
+.carousel__photo .card .profile p {
+    margin-top: 10px;
+}
+
+/* Display the initial item and bring it to the front using 'z-index'. These styles also apply to the 'active' item. */
+.carousel__photo.initial,
+.carousel__photo.active {
+    opacity: 1;
+    position: relative;
+    z-index: 900;
+}
+
+/* Set 'z-index' to sit behind our '.active' item. */
+.carousel__photo.prev,
+.carousel__photo.next {
+    z-index: 800;
+}
+
+/* Translate previous item to the left */
+.carousel__photo.prev {
+    transform: translateX(-100%);
+}
+
+/* Translate next item to the right */
+.carousel__photo.next {
+    transform: translateX(100%);
+}
+
+/* Style navigation buttons to sit in the middle, either side of the carousel. */
+.carousel__button--prev,
+.carousel__button--next {
+    position: absolute;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001; /* Sit on top of everything */
+    border: 1px solid black;
+    /*  opacity: 0;  Hide buttons until carousel is initialised 
+    transition:opacity 1s;*/
+}
+
+.carousel__button--prev {
+    left: 0;
+}
+
+.carousel__button--next {
+    right: 0;
+}
+
+/* Use pseudo elements to insert arrows inside of navigation buttons */
+.carousel__button--prev::after,
+.carousel__button--next::after {
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 54%;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.carousel__button--next::after {
+    left: 47%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* footer */
+.footer {
+    background: #0c3f4f;
+}
+.footer .footer-content {
+    width: 90%;
+    margin: 0px auto;
+    padding: 70px 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.footer .footer-content h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+}
+.footer .footer-content p{
+    margin: 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+.footer .footer-content li {
+    margin: 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+@media screen and (max-width: 769px) {
+    .footer .footer-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+/* footer */
